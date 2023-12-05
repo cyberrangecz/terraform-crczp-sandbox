@@ -50,3 +50,5 @@ No modules.
 | <a name="output_pool_id"></a> [pool\_id](#output\_pool\_id) | Id of created sandbox pool. |
 | <a name="output_sandbox_ids"></a> [sandbox\_ids](#output\_sandbox\_ids) | List of ids of created sandboxes. |
 <!-- END_TF_DOCS -->
+
+**Author**: Zdeněk Vydra
