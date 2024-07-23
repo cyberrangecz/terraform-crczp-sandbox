@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "kypo_sandbox_definition" "definition" {
-  url = startswith(var.project_url, "git@") ? var.project_url : replace(var.project_url, "/^(https?://)?([^/]+)/(.+?)(\\.git)?$/", "git@$2:$3.git")
+  url = replace(var.project_url, "/^((https?://)|(git@))?([^:/]+)[/:](.+?)(\\.git)?$/", "https://$4/$5.git")
   rev = var.rev
 }
 
