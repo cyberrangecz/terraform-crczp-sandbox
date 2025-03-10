@@ -1,19 +1,18 @@
 terraform {
   required_providers {
-    kypo = {
-      source  = "vydrazde/kypo"
+    crczp = {
+      source  = "cyberrangecz/crczp"
       version = ">= 0.1.0"
     }
   }
 }
 
-provider "kypo" {
-  endpoint  = "https://your.kypo.ex"
-  client_id = "xxx"
+provider "crczp" {
+  endpoint = "https://your.crczp.ex"
 }
 
 module "sandbox" {
-  source      = "vydrazde/sandbox/kypo"
-  project_url = "https://gitlab.ics.muni.cz/muni-kypo-trainings/games/junior-hacker.git"
+  source      = "cyberrangecz/sandbox/crczp"
+  project_url = "https://github.com/cyberrangecz/library-junior-hacker.git"
   rev         = "master"
 }
