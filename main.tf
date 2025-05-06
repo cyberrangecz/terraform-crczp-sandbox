@@ -2,14 +2,15 @@ terraform {
   required_providers {
     crczp = {
       source  = "cyberrangecz/crczp"
-      version = ">= 0.1.0"
+      version = ">= 0.2.0"
     }
   }
 }
 
 resource "crczp_sandbox_definition" "definition" {
-  url = replace(var.project_url, "/^((https?://)|(git@))?([^:/]+)[/:](.+?)(\\.git)?$/", "https://$4/$5.git")
-  rev = var.rev
+  url                 = replace(var.project_url, "/^((https?://)|(git@))?([^:/]+)[/:](.+?)(\\.git)?$/", "https://$4/$5.git")
+  rev                 = var.rev
+  refresh_image_cache = var.refresh_image_cache
 }
 
 resource "crczp_sandbox_pool" "pool" {

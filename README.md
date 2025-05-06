@@ -6,13 +6,13 @@ Terraform module which creates sandbox definition, sandbox pool and allocation u
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_crczp"></a> [crczp](#requirement\_crczp) | >= 0.1.0 |
+| <a name="requirement_crczp"></a> [crczp](#requirement\_crczp) | >= 0.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_crczp"></a> [crczp](#provider\_crczp) | >= 0.1.0 |
+| <a name="provider_crczp"></a> [crczp](#provider\_crczp) | >= 0.2.0 |
 | <a name="provider_local"></a> [local](#provider\_local) | n/a |
 | <a name="provider_null"></a> [null](#provider\_null) | n/a |
 
@@ -38,6 +38,7 @@ No modules.
 | <a name="input_output_directory"></a> [output\_directory](#input\_output\_directory) | The directory where files with outputs will be created. | `string` | `"outputs"` | no |
 | <a name="input_pool_size"></a> [pool\_size](#input\_pool\_size) | The maximum number of sandboxes that can be allocated in a pool. Defaults to sandbox\_count. | `number` | `null` | no |
 | <a name="input_project_url"></a> [project\_url](#input\_project\_url) | Url to Git repository with sandbox definition, as obtained by Clone with SSH or HTTPS. | `string` | n/a | yes |
+| <a name="input_refresh_image_cache"></a> [refresh\_image\_cache](#input\_refresh\_image\_cache) | n/a | `bool` | `false` | no |
 | <a name="input_rev"></a> [rev](#input\_rev) | Git revision of the Git repository from project\_url to use. | `string` | n/a | yes |
 | <a name="input_sandbox_count"></a> [sandbox\_count](#input\_sandbox\_count) | The number of sandboxes to be allocated. | `number` | `1` | no |
 | <a name="input_stages"></a> [stages](#input\_stages) | Set of stages whose output from sandbox allocation will be saved to files in output\_directory. One file per each combination of stage and sandbox. | `set(string)` | <pre>[<br/>  "user-ansible",<br/>  "networking-ansible",<br/>  "terraform"<br/>]</pre> | no |
