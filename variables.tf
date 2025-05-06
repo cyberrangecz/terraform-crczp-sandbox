@@ -36,6 +36,11 @@ variable "output_directory" {
   description = "The directory where files with outputs will be created."
 }
 
+variable "refresh_image_cache" {
+  type    = bool
+  default = false
+}
+
 locals {
   _pool_size = var.pool_size != null ? var.pool_size : var.sandbox_count
   for_sandbox_stage = { for pair in setproduct(range(var.sandbox_count), var.stages) : "${pair[0]}-${pair[1]}" =>
